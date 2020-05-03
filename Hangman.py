@@ -1,22 +1,17 @@
 import random
-print("--- Welcome To The Hangman Game ---")
-print("Enter your name")
-name=input()
-print("Hello "+name+"!")
 options=['magnificent','secret','happy','world','hilarious','computer','python','programming']
 search=random.choice(options)
-print("Your word to be searched - ")
+print("The word to be searched-")
 for _ in search:
     print("*",end='')
 
 print()
-turns=len(search)+2
-print("You have total "+turns+" chances to guess the correct word")
+turns=10
 count=0
 guess=''
 while turns>0:
     failed=0
-    ch=input("Enter your character- ")
+    ch=input("Enter your character")
     guess=guess+ch
     for c in search:
         if c in guess:
