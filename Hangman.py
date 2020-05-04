@@ -1,12 +1,20 @@
 import random
-options=['magnificent','secret','happy','world','hilarious','computer','python','programming']
-search=random.choice(options)
-print("The word to be searched-")
-for _ in search:
-    print("*",end='')
-
+options=['magnificent','secret','happy','world','hilarious','computer','python','programming','hangman']
+print("---Welcome To Hangman---")
 print()
-turns=10
+name=input("Enter your name to start the game!-  ")
+print()
+print("Hello {}! Welcome to the game".format(name))
+search=random.choice(options)
+print("The word to be searched- ")
+print("*"*len(search))
+print("You have to search a {} lettered word.".format(len(search)))
+print("Rules for the Game - ")
+turns=len(search)+2
+print("You have {} turns in total to guess the word with all lowercase letters".format(turns))
+print()
+print("Goodluck!")
+print()
 count=0
 guess=''
 while turns>0:
@@ -26,4 +34,5 @@ while turns>0:
         break
     turns-=1
 if turns==0:
+    print("The word was- "+search)
     print("Better Luck next time!")
